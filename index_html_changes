@@ -1,0 +1,6 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/highcharts.js"></script>  // This second line has the correct slashes and format to work
+  <style>
+    body {
+      min-width: 310px;
+  
