@@ -1,0 +1,12 @@
+// Route for root / web page
+  /*server.on("/highcharts.js", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(SPIFFS, "/index.html", "text/html");
+  });*/  This is commented out because it didn't work.  The next lines did.  Insert these into your code
+  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {    // define here what the webserver needs to do
+    request->send(SPIFFS, "/index.html", "text/html");           
+  });
+  server.onNotFound([](AsyncWebServerRequest *request) {
+    request->send(404, "text/plain", "File not found");
+  });
+
+  server.serveStatic("/", SPIFFS, "/");
